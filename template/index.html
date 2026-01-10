@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Our Special Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Indicator -->
+    <div id="loading-indicator" class="loading-container">
+        <div class="spinner"></div>
+        <p>Loading your special page...</p>
+    </div>
+
+    <!-- Error Container -->
+    <div id="error-container" class="error-container" style="display: none;">
+        <div class="error-content">
+            <i class="fas fa-exclamation-circle error-icon"></i>
+            <p id="error-message">An error occurred</p>
+        </div>
+    </div>
+
+    <!-- Main App Content (hidden by default) -->
+    <div class="app-container" style="display: none;">
+        <!-- Page 1: Cover -->
+        <div class="page active" id="page-cover">
+            <div class="page-content">
+                <h1 class="couple-names">John & Jane</h1>
+                <p class="date">Together since <span id="together-date"></span></p>
+                <div class="nav-buttons">
+                    <button class="nav-btn next-btn" data-target="page-message">
+                        Open Love Letter <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 2: Love Message -->
+        <div class="page" id="page-message">
+            <div class="page-content">
+                <h2>To My Love</h2>
+                <div class="message-content" id="love-message-content">
+                    Loading your special message...
+                </div>
+                <div class="nav-buttons">
+                    <button class="nav-btn prev-btn" data-target="page-cover">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button class="nav-btn next-btn" data-target="page-memories">
+                        Memories <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 3: Memories -->
+        <div class="page" id="page-memories">
+            <div class="page-content">
+                <h2>Our Memories</h2>
+                <div class="memory-container" id="memory-container">
+                    <!-- Memories will be added here by JavaScript -->
+                </div>
+                <div class="nav-buttons">
+                    <button class="nav-btn prev-btn" data-target="page-message">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button class="nav-btn next-btn" data-target="page-final">
+                        Final Note <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 4: Final Note -->
+        <div class="page" id="page-final">
+            <div class="page-content">
+                <h2>Always Yours</h2>
+                <div class="final-note" id="final-note-content">
+                    <!-- Final note content will be added here by JavaScript -->
+                </div>
+                <div class="signature" id="signature-name">
+                    <!-- Signature will be added here by JavaScript -->
+                </div>
+                <div class="nav-buttons">
+                    <button class="nav-btn prev-btn" data-target="page-memories">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button class="nav-btn home-btn" data-target="page-cover">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Indicators -->
+        <div class="page-indicators">
+            <div class="indicator active" data-target="page-cover"></div>
+            <div class="indicator" data-target="page-message"></div>
+            <div class="indicator" data-target="page-memories"></div>
+            <div class="indicator" data-target="page-final"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
