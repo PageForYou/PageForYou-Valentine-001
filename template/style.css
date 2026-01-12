@@ -32,7 +32,7 @@
 .mailbox {
     width: 300px;
     height: 300px;
-    background-image: url('assets/img/mailbox1_closed.png');
+    /* background-image: url('assets/img/mailbox1_closed.png'); */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -40,6 +40,55 @@
     cursor: pointer;
     position: relative;
     z-index: 2;
+}
+.mailbox-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/img/mailbox1_closed.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+
+/* When mailbox is open */
+.mailbox.open .mailbox-back {
+    background-image: url('assets/img/mailbox1_open.png');
+}
+/* Front layer (mailbox details) */
+.mailbox-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/img/mailbox1_open_front.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;  /* Higher than rose but lower than door */
+    opacity: 0;
+    /* transition: opacity 0.3s ease-in-out; */
+}
+/* Show front layer when mailbox is open */
+.mailbox.open .mailbox-front {
+    opacity: 1;
+}
+/* Rose inside mailbox */
+.rose-inside {
+    position: absolute;
+    width: 22svh;
+    height: auto;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-43%) rotate(-60deg);
+    opacity: 0;
+    /* transition: opacity 0.5s ease-in-out; */
+    z-index: 2;  /* Between back (1) and front (3) */
+    pointer-events: none;
+}
+/* Show rose when mailbox is open */
+.mailbox.open .rose-inside {
+    opacity: 1;
 }
 
 .mailbox.open {
@@ -95,4 +144,22 @@
 
 * {
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Rose inside mailbox */
+.rose-inside {
+    position: absolute;
+    width: 22svh;  /* Adjust size as needed */
+    height: auto;
+    top: 22%;  /* Position inside the mailbox */
+    left: 50%;
+    transform: translateX(-43%) rotate(-60deg);
+    opacity: 0;  /* Initially hidden */
+    /* transition: opacity 0.5s ease-in-out; */
+    z-index: 1;
+    pointer-events: none;  /* Make it non-interactive */
+}
+/* Show rose when mailbox is open */
+.mailbox.open .rose-inside {
+    opacity: 1;
 }

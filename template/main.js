@@ -97,8 +97,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle mailbox interaction
     function handleMailboxInteraction() {
         if (isOpened) {
-            // Show 3D model when mailbox is already open
-            document.getElementById('model-viewer').style.display = 'block';
+            // Toggle rose visibility when clicking the open mailbox
+            const rose = document.getElementById('roseInside');
+            if (rose) {
+                rose.style.opacity = rose.style.opacity === '0' ? '1' : '1';
+            }
             return;
         }
         
@@ -116,6 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // // Initialize and show 3D model
             // init3DViewer();
             // document.getElementById('model-viewer').style.display = 'block';
+            
+            // Show the rose
+            const rose = document.getElementById('roseInside');
+            if (rose) {
+                rose.style.opacity = '1';
+            }
         }, 300);
     }
 

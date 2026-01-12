@@ -30,7 +30,16 @@
     <div id="mailbox-screen">
         <div class="pink-background"></div>
         <div class="mailbox-container" id="mailboxContainer">
-            <div class="mailbox" id="mailbox"></div>
+            <div class="mailbox" id="mailbox">
+                <!-- Back layer - Main mailbox (closed state) -->
+                <div class="mailbox-back"></div>
+                
+                <!-- Middle layer - Rose (initially hidden) -->
+                <img src="assets/img/RedRose.png" alt="Rose" class="rose-inside" id="roseInside">
+                
+                <!-- Front layer - Mailbox front details (initially hidden) -->
+                <div class="mailbox-front"></div>
+            </div>
         </div>
     </div>
 
