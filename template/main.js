@@ -113,9 +113,9 @@ document.addEventListener('DOMContentLoaded', function() {
             mailbox.classList.add('open');
             isOpened = true;
             
-            // Initialize and show 3D model
-            init3DViewer();
-            document.getElementById('model-viewer').style.display = 'block';
+            // // Initialize and show 3D model
+            // init3DViewer();
+            // document.getElementById('model-viewer').style.display = 'block';
         }, 300);
     }
 
