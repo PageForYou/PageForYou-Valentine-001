@@ -18,6 +18,9 @@
             min-height: 100svh;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
     <!-- Add this version badge -->
@@ -36,6 +39,8 @@
         <!-- Your app content will go here -->
     </div>
 
+    <!-- 3D Model Viewer (initially hidden) -->
+    <div id="model-viewer" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000;"></div>
     <script src="main.js"></script>
 </body>
 </html>
